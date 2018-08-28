@@ -1,5 +1,5 @@
 # Kubernetes-Quick-Install
-Start with at least a 3 node cluster.  I used Openstack with ctool to deploy.
+Start with at least a 3 node cluster.  I used Openstack c3.2xlarge instances
 
 
 # Install Docker on all of your nodes
