@@ -122,7 +122,7 @@ kubectl get services --all-namespaces -o wide
 kubectl cluster-info
  ```
 
-#Install the Kubernetes Dashboard
+# Install the Kubernetes Dashboard
 
 `kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml`
 
