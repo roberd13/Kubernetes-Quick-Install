@@ -22,10 +22,10 @@ apt-get update && apt-get install -y docker-ce=$(apt-cache madison docker-ce | g
 
 # Install Kubeadm on all of your nodes
 
-The "sudo -i" changes user to root.
+The "sudo su -" changes user to root.
 
 ```
-sudo -i
+sudo su -
 apt-get update && apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 ```
