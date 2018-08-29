@@ -1,5 +1,5 @@
 # Kubernetes-Quick-Install
-Start with at least a 3 node cluster.  I used Openstack c3.2xlarge instances
+Start with at least a 3 node cluster.  I used Openstack c3.2xlarge instances running Ubuntu 16.04
 
 
 # Install Docker on all of your nodes
@@ -30,7 +30,7 @@ apt-get update && apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 ```
 
-# Add a kubernetes repository for the latest stable one for the ubuntu flavor on the machine (here:xenial)
+# Add a kubernetes repository for the latest stable one for the ubuntu flavor on the machine (here:16.04 xenial)
 
 ```
 cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
@@ -66,13 +66,13 @@ A "Pod network" must be deployed to use the cluster. This will let pods to commu
 
 There are many different pod networks to choose from. See https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#pod-network
 
-I used Flannel 
+I choose Flannel arbitrarily (well because I like Flannel shirts)
 
 For flannel to work correctly, you must pass --pod-network-cidr=10.244.0.0/16 to kubeadm init.
 
 and
 
-Set /proc/sys/net/bridge/bridge-nf-call-iptables to 1 by running `sysctl net.bridge.bridge-nf-call-iptables=1` to pass bridged IPv4 traffic to iptables’ chains. This is a requirement for some CNI plugins to work, for more information please see here.
+Set /proc/sys/net/bridge/bridge-nf-call-iptables to 1 by running `sysctl net.bridge.bridge-nf-call-iptables=1` to pass bridged IPv4 traffic to iptables’ chains. 
 
 
 # Initialize your Master (only on the node you designate as master) 
