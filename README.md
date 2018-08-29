@@ -194,7 +194,7 @@ spec:
   selector:
     k8s-app: kubernetes-dashboard
   sessionAffinity: None
-  type: ClusterIP
+  type: ClusterIP <--- Change to NodePort
 status:
   loadBalancer: {}
  ```
@@ -214,7 +214,7 @@ To find the node your Dashboard is running on run the following command.
 
 `kubectl get pods --all-namespaces --show-all -o wide | grep dashboard`
 
-Now you can access it from your browser at: https://<node-ip>:<nodePort>
+Now you can access it from your browser at: https://node-ip:nodePort
 
 Now we need to find the token we can use to log in. Execute following command:
 
